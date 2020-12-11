@@ -94,11 +94,5 @@ jobs:
         docker container inspect db
         docker logs --details db
 
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v1
-      with:
-        file: ./coverage.xml
-        flags: unittests
-        env_vars: OS,PYTHON
-        name: codecov-umbrella
-        fail_ci_if_error: false
+    - name: Super-Linter
+      uses: github/super-linter@v3.14.0
